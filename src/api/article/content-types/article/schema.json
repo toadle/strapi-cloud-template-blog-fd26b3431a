@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
+    "displayName": "Artikel",
     "description": "Create your blog content"
   },
   "options": {
@@ -15,35 +15,65 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text",
-      "maxLength": 80
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
     },
-    "cover": {
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "teaserImage": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
-    "author": {
+    "displayToc": {
+      "type": "boolean"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "sources": {
+      "type": "richtext"
+    },
+    "seoText": {
+      "type": "richtext"
+    },
+    "metaKeywords": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "metaRobots": {
+      "type": "string"
+    },
+    "sponsoredArticle": {
+      "type": "boolean"
+    },
+    "vgWortPixelUrl": {
+      "type": "string"
+    },
+    "affiliateNoticeHidden": {
+      "type": "boolean"
+    },
+    "listPriority": {
+      "type": "integer"
+    },
+    "authors": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
+      "relation": "oneToMany",
+      "target": "api::author.author"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "contentfulId": {
+      "type": "string",
+      "unique": true
     }
   }
 }

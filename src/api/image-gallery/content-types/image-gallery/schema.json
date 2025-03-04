@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "image_galleries",
+  "info": {
+    "singularName": "image-gallery",
+    "pluralName": "image-galleries",
+    "displayName": "Bilder-Gallerie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "serviceProvider": {
+      "type": "richtext"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::image-gallery-tag.image-gallery-tag",
+      "mappedBy": "imageGalleries"
+    }
+  }
+}

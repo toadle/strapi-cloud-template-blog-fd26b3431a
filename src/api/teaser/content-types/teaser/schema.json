@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teasers",
+  "info": {
+    "singularName": "teaser",
+    "pluralName": "teasers",
+    "displayName": "Teaser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "displayType": {
+      "type": "enumeration",
+      "enum": [
+        "hero",
+        "hero_topicpage",
+        "hero_with_badge",
+        "feature_list",
+        "fullimage_right",
+        "fullimage_left",
+        "article_imageright_half",
+        "article_imageleft",
+        "article_imageleft_half",
+        "article_imageright"
+      ]
+    },
+    "displayColorType": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark",
+        "neutral"
+      ]
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category",
+    "displayName": "Kategorie",
     "description": "Organize your content into categories"
   },
   "options": {
@@ -12,20 +12,60 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
-    "articles": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "featuredArticles": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "category"
+      "target": "api::article.article"
     },
-    "description": {
-      "type": "text"
+    "catIntroHead": {
+      "type": "string"
+    },
+    "catIntroduction": {
+      "type": "richtext"
+    },
+    "subcategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    },
+    "top": {
+      "type": "boolean"
+    },
+    "seoText": {
+      "type": "richtext"
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaKeywords": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "metaRobots": {
+      "type": "string"
+    },
+    "vgWortPixelUrl": {
+      "type": "string"
     }
   }
 }
